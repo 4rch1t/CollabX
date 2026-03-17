@@ -10,8 +10,8 @@
 
 <nav class="navbar">
   <div class="nav-left">
-    <a href="/projects.html">Projects</a>
-    <a href="/create-project.html">Create Project</a>
+    <a href="/projects.html">Explore Projects</a>
+    <a href="/dashboard.html" style="color:var(--red)">Dashboard</a>
   </div>
   <a href="/" class="nav-logo">COLLAB<span>X</span></a>
   <div class="nav-right">
@@ -21,8 +21,8 @@
       <span id="nav-user-name"></span>
     </div>
     <div class="nav-dropdown" id="nav-dropdown">
+      <a href="/create-project.html">Create Project</a>
       <a href="/profile.html">Profile</a>
-      <a href="/messages.html">Messages</a>
       <a href="#" onclick="logout();return false;">Log Out</a>
     </div>
   </div>
@@ -35,7 +35,26 @@
         <h1 id="greeting">Welcome back!</h1>
         <p style="color:var(--gray)">Here's your CollabX overview</p>
       </div>
-      <a href="/create-project.html" class="btn btn-red">+ New Project</a>
+      <div class="page-header-actions">
+        <a href="/projects.html" class="btn btn-yellow btn-sm">🔍 Explore Projects</a>
+        <a href="/create-project.html" class="btn btn-red btn-sm">+ New Project</a>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <a href="/projects.html" class="quick-action-card">
+        <div class="quick-action-icon">🔍</div>
+        <div><strong>Find a Team</strong><p>Browse open projects and apply to join</p></div>
+      </a>
+      <a href="/create-project.html" class="quick-action-card">
+        <div class="quick-action-icon">🚀</div>
+        <div><strong>Post a Project</strong><p>Share your idea and recruit teammates</p></div>
+      </a>
+      <a href="/messages.html" class="quick-action-card">
+        <div class="quick-action-icon">💬</div>
+        <div><strong>Messages</strong><p>Chat with your teammates</p></div>
+      </a>
     </div>
 
     <!-- Join with Invite Code -->
@@ -45,11 +64,21 @@
       <button class="btn btn-sm btn-red" id="join-invite-btn">Join Team</button>
     </div>
 
+    <!-- Pending Requests (applications to your projects) -->
+    <div id="pending-requests" style="display:none">
+      <div class="section-title">
+        <span>📥 Pending Requests</span>
+        <span class="pending-count" id="pending-count"></span>
+      </div>
+      <div id="pending-list" class="pending-list"></div>
+    </div>
+
     <!-- Stats -->
     <div class="stats-grid" id="stats">
       <div class="stat-card red"><div class="stat-number" id="stat-owned">0</div><div class="stat-label">Projects Created</div></div>
       <div class="stat-card yellow"><div class="stat-number" id="stat-member">0</div><div class="stat-label">Teams Joined</div></div>
-      <div class="stat-card black"><div class="stat-number" id="stat-apps">0</div><div class="stat-label">Applications</div></div>
+      <div class="stat-card black"><div class="stat-number" id="stat-apps">0</div><div class="stat-label">My Applications</div></div>
+      <div class="stat-card" style="border-left:4px solid #4CAF50"><div class="stat-number" style="color:#4CAF50" id="stat-pending">0</div><div class="stat-label">Pending Requests</div></div>
     </div>
 
     <!-- Tabs -->

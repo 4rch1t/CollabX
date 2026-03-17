@@ -11,19 +11,21 @@
 <!-- Navigation -->
 <nav class="navbar">
   <div class="nav-left">
-    <a href="#how-it-works">How it works</a>
-    <a href="/projects.html">Projects</a>
+    <a href="/projects.html">Explore Projects</a>
+    <a href="/dashboard.html" class="auth-only">Dashboard</a>
+    <a href="#how-it-works" class="guest-only">How it works</a>
   </div>
   <a href="/" class="nav-logo">COLLAB<span>X</span></a>
   <div class="nav-right">
-    <a href="#contact" class="guest-only">Contact</a>
+    <a href="/messages.html" class="auth-only" style="font-weight:700">Messages</a>
     <a href="/login.html" class="btn nav-btn guest-only" style="padding:8px 24px">Log In</a>
-    <a href="/dashboard.html" class="auth-only" style="font-weight:700">Dashboard</a>
+    <a href="/register.html" class="btn nav-btn-outline guest-only" style="padding:8px 24px">Sign Up</a>
     <div class="nav-user auth-only" id="nav-user-btn">
       <div class="nav-avatar" id="nav-user-avatar">?</div>
       <span id="nav-user-name"></span>
     </div>
-    <div class="nav-dropdown" id="nav-dropdown">
+    <div class="nav-dropdown auth-only" id="nav-dropdown">
+      <a href="/dashboard.html">Dashboard</a>
       <a href="/profile.html">Profile</a>
       <a href="/messages.html">Messages</a>
       <a href="#" onclick="logout();return false;">Log Out</a>
@@ -42,9 +44,13 @@
     <div class="hero-content">
       <h1>Find Your<br>Dream Team</h1>
       <p>Form skill-balanced teams for hackathons, projects, and startups. Move beyond friend circles — match with the right people, fast.</p>
-      <div class="hero-buttons">
+      <div class="hero-buttons guest-only">
         <a href="/register.html" class="btn btn-dark">Get Started →</a>
         <a href="#how-it-works" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="hero-buttons auth-only">
+        <a href="/projects.html" class="btn btn-dark">Explore Projects →</a>
+        <a href="/dashboard.html" class="btn btn-outline">My Dashboard</a>
       </div>
     </div>
     <div class="hero-visual">

@@ -10,8 +10,8 @@
 
 <nav class="navbar">
   <div class="nav-left">
-    <a href="/projects.html" style="color:var(--red)">Projects</a>
-    <a href="/create-project.html">Create Project</a>
+    <a href="/projects.html" style="color:var(--red)">Explore Projects</a>
+    <a href="/dashboard.html" class="auth-only">Dashboard</a>
   </div>
   <a href="/" class="nav-logo">COLLAB<span>X</span></a>
   <div class="nav-right">
@@ -22,7 +22,7 @@
       <span id="nav-user-name"></span>
     </div>
     <div class="nav-dropdown auth-only" id="nav-dropdown">
-      <a href="/dashboard.html">Dashboard</a>
+      <a href="/create-project.html">Create Project</a>
       <a href="/profile.html">Profile</a>
       <a href="/messages.html">Messages</a>
       <a href="#" onclick="logout();return false;">Log Out</a>
@@ -33,7 +33,11 @@
 <main class="page-wrapper" style="background:var(--cream)">
   <div class="container">
     <div class="page-header">
-      <h1>Explore Projects</h1>
+      <div>
+        <h1>Explore Projects</h1>
+        <p style="color:var(--gray)">Find open projects looking for teammates</p>
+      </div>
+      <a href="/create-project.html" class="btn btn-red btn-sm auth-only">+ Post Your Project</a>
     </div>
 
     <div class="search-bar">
