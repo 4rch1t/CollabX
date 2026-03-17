@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — CollabX</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="auth-page" style="background:var(--yellow)">
+  <div class="sparkle sparkle-1 sparkle-dark">✦</div>
+  <div class="sparkle sparkle-3 sparkle-dark">✧</div>
+  <div class="sparkle sparkle-5 sparkle-dark">✦</div>
+  <div class="auth-card">
+    <h1>Sign Up</h1>
+    <p class="subtitle">Join CollabX and find your dream team</p>
+    <div class="auth-error" id="error"></div>
+    <form id="register-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" class="form-input" placeholder="Jane Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-input" placeholder="you@university.edu" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-input" placeholder="Min 6 characters" required minlength="6">
+      </div>
+      <div class="form-group">
+        <label>Skills <span style="font-weight:400;color:#888">(press Enter to add)</span></label>
+        <div class="tag-input-wrapper" id="skills-wrapper">
+          <input type="text" placeholder="e.g. React, Python, UI Design">
+        </div>
+        <input type="hidden" id="skills-hidden">
+      </div>
+      <div class="form-group">
+        <label for="bio">Short Bio</label>
+        <textarea id="bio" class="form-textarea" rows="3" placeholder="Tell people about yourself..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-red">Create Account →</button>
+    </form>
+    <p class="auth-footer">Already have an account? <a href="/login.html">Log in</a></p>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+<script>
+  if (isLoggedIn()) window.location.href = '/dashboard.html';
+
+  const skillsInput = setupTagInput('skills-wrapper', 'skills-hidden');
+
+  document.getElementById('register-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const errEl = document.getElementById('error');
+    errEl.style.display = 'none';
+    const btn = e.target.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Creating account...';
+
+    try {
+      const data = await api('/auth/register', {
+        method: 'POST',
+        body: {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          skills: skillsInput.getTags(),
+          bio: document.getElementById('bio').value
+        }
+      });
+      setAuth(data.token, data.user);
+      window.location.href = '/dashboard.html';
+    } catch (err) {
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+      btn.disabled = false; btn.textContent = 'Create Account →';
+    }
+  });
+</script>
+</body>
+</html>

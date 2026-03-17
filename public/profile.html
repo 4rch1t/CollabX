@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — CollabX</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/projects.html">Projects</a>
+    <a href="/create-project.html">Create Project</a>
+  </div>
+  <a href="/" class="nav-logo">COLLAB<span>X</span></a>
+  <div class="nav-right">
+    <a href="/messages.html" style="font-weight:700">Messages</a>
+    <div class="nav-user" id="nav-user-btn">
+      <div class="nav-avatar" id="nav-user-avatar">?</div>
+      <span id="nav-user-name"></span>
+    </div>
+    <div class="nav-dropdown" id="nav-dropdown">
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/profile.html" style="color:var(--red)">Profile</a>
+      <a href="#" onclick="logout();return false;">Log Out</a>
+    </div>
+  </div>
+</nav>
+
+<main class="page-wrapper" style="background:var(--cream)">
+  <div class="container profile-page">
+    <div class="profile-header" id="profile-header">
+      <div class="profile-avatar" id="profile-avatar">?</div>
+      <div class="profile-info">
+        <h1 id="profile-name">Loading...</h1>
+        <p id="profile-email"></p>
+      </div>
+    </div>
+
+    <div class="profile-body">
+      <!-- View Mode -->
+      <div id="view-mode">
+        <div class="profile-section">
+          <h3>Bio</h3>
+          <p id="profile-bio" style="color:var(--gray)">No bio yet.</p>
+        </div>
+        <div class="profile-section">
+          <h3>Skills</h3>
+          <div class="tags-container" id="profile-skills"></div>
+        </div>
+        <div class="profile-section">
+          <h3>Interests</h3>
+          <div class="tags-container" id="profile-interests"></div>
+        </div>
+        <div class="profile-section">
+          <h3>Links</h3>
+          <p><strong>GitHub:</strong> <span id="profile-github">—</span></p>
+          <p><strong>LinkedIn:</strong> <span id="profile-linkedin">—</span></p>
+        </div>
+        <button class="btn btn-dark" id="edit-btn" style="margin-top:8px">Edit Profile</button>
+      </div>
+
+      <!-- Edit Mode -->
+      <div id="edit-mode" style="display:none">
+        <form id="profile-form">
+          <div class="form-group">
+            <label for="edit-name">Name</label>
+            <input type="text" id="edit-name" class="form-input" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-bio">Bio</label>
+            <textarea id="edit-bio" class="form-textarea" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Skills</label>
+            <div class="tag-input-wrapper" id="edit-skills-wrapper">
+              <input type="text" placeholder="Press Enter to add">
+            </div>
+            <input type="hidden" id="edit-skills-hidden">
+          </div>
+          <div class="form-group">
+            <label>Interests</label>
+            <div class="tag-input-wrapper" id="edit-interests-wrapper">
+              <input type="text" placeholder="Press Enter to add">
+            </div>
+            <input type="hidden" id="edit-interests-hidden">
+          </div>
+          <div class="form-group">
+            <label for="edit-github">GitHub URL</label>
+            <input type="text" id="edit-github" class="form-input" placeholder="https://github.com/yourusername">
+          </div>
+          <div class="form-group">
+            <label for="edit-linkedin">LinkedIn URL</label>
+            <input type="text" id="edit-linkedin" class="form-input" placeholder="https://linkedin.com/in/yourusername">
+          </div>
+          <div style="display:flex;gap:12px">
+            <button type="submit" class="btn btn-red" style="flex:1">Save Changes</button>
+            <button type="button" class="btn btn-outline" id="cancel-edit">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/js/app.js"></script>
+<script src="/js/profile.js"></script>
+</body>
+</html>

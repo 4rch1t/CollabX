@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollabX — Find Your Dream Team</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="#how-it-works">How it works</a>
+    <a href="/projects.html">Projects</a>
+  </div>
+  <a href="/" class="nav-logo">COLLAB<span>X</span></a>
+  <div class="nav-right">
+    <a href="#contact" class="guest-only">Contact</a>
+    <a href="/login.html" class="btn nav-btn guest-only" style="padding:8px 24px">Log In</a>
+    <a href="/dashboard.html" class="auth-only" style="font-weight:700">Dashboard</a>
+    <div class="nav-user auth-only" id="nav-user-btn">
+      <div class="nav-avatar" id="nav-user-avatar">?</div>
+      <span id="nav-user-name"></span>
+    </div>
+    <div class="nav-dropdown" id="nav-dropdown">
+      <a href="/profile.html">Profile</a>
+      <a href="/messages.html">Messages</a>
+      <a href="#" onclick="logout();return false;">Log Out</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="sparkle sparkle-1">✦</div>
+  <div class="sparkle sparkle-2">✦</div>
+  <div class="sparkle sparkle-3">✧</div>
+  <div class="sparkle sparkle-4">✦</div>
+  <div class="sparkle sparkle-5">✧</div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Find Your<br>Dream Team</h1>
+      <p>Form skill-balanced teams for hackathons, projects, and startups. Move beyond friend circles — match with the right people, fast.</p>
+      <div class="hero-buttons">
+        <a href="/register.html" class="btn btn-dark">Get Started →</a>
+        <a href="#how-it-works" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-blob-1"></div>
+      <div class="hero-blob-2"></div>
+      <div class="hero-circle">🚀</div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <h2 style="font-style:italic">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Create Profile</h3>
+        <p>Showcase your skills, interests, and what you bring to a team</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Post or Browse</h3>
+        <p>Share your project idea or discover one that excites you</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Match &amp; Connect</h3>
+        <p>Apply to projects and get matched based on skill overlap</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Build Together</h3>
+        <p>Chat in real-time and start creating something awesome</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+  <div class="container">
+    <h2>Why CollabX?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Skill-Based Matching</h3>
+        <p>Our system matches you with teammates who complement your abilities — no more unbalanced teams.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>Real-Time Chat</h3>
+        <p>Instant messaging built right in. Connect with potential teammates before committing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3>Hackathon Ready</h3>
+        <p>Purpose-built for hackathons, research projects, and startup teams. Find people who ship.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3>Beyond Friend Circles</h3>
+        <p>Discover talented collaborators outside your usual network. Diversity makes stronger teams.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Team Formation</h3>
+        <p>Post a project, get applications, build your team — all in minutes, not days.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔓</div>
+        <h3>Open &amp; Free</h3>
+        <p>No paywalls, no premium tiers. Great collaboration should be accessible to everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="sparkle sparkle-1" style="color:#F5B800">✦</div>
+  <div class="sparkle sparkle-2" style="color:#F5B800">✧</div>
+  <div class="container">
+    <h2>Ready to Build<br>Something Great?</h2>
+    <p>Join hundreds of students and researchers already forming dream teams on CollabX.</p>
+    <a href="/register.html" class="btn btn-red" style="font-size:1.1rem;padding:16px 40px">Create Free Account →</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 <strong>CollabX</strong> — Built for builders. <a href="#how-it-works">How it works</a> · <a href="/projects.html">Projects</a></p>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
